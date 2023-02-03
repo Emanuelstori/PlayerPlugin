@@ -1,21 +1,20 @@
 package com.runeforger.api;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.runeforger.models.Adventurer;
+
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
-import com.sun.net.httpserver.HttpServer;
+
 import java.io.InputStreamReader;
-import clojure.tools.reader.reader_types.InputStreamReader;
+
 
 import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
 import java.net.URL;
 
 public class AdventurerApi {
-    public void getAdventurer(String uuid){
+    public static void getAdventurer(String uuid){
         String url = "http://localhost:3000/api/adventurer/" + uuid;
 
         try {
@@ -33,13 +32,15 @@ public class AdventurerApi {
                 }
                 in.close();
 
-                // Aqui você pode usar uma biblioteca como Jackson para parsear a resposta JSON
-                // e criar um objeto Adventurer a partir dela.
+                ObjectMapper mapper = new ObjectMapper();
+                Adventurer[] adventurers = mapper.readValue(response.toString(), Adventurer[].class);
+                System.out.println(adventurers[0].getNick());
+                System.out.println("OK");
             } else {
-                // Tratar erro na chamada à API
+                System.out.println("Erro api");
             }
         } catch (IOException e) {
-            // Tratar exceção
+            System.out.println(e.getMessage());
         }
     }
 }

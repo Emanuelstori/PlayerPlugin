@@ -1,5 +1,6 @@
 package com.runeforger.listeners;
 
+import com.runeforger.api.AdventurerApi;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,6 +15,8 @@ public class NormalListeners implements Listener {
     new Playerfile().createFolder(player.getUniqueId().toString());
 
     player.sendMessage("Bem vindo");
+
+    AdventurerApi.getAdventurer(player.getUniqueId().toString());
 
   }
 }
