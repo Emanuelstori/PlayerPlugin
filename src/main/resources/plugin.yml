@@ -1,0 +1,4 @@
+name: RuneForger
+version: ''
+main: com.runeforger.RuneForger
+api-version: 1.19
