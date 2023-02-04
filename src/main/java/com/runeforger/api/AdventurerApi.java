@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class AdventurerApi {
     public static void getAdventurer(String uuid){
-        String url = "http://localhost:3000/api/adventurer/" + uuid;
+        String url = "http://localhost:3000/api/adventurer/uuid/" + uuid;
 
         try {
             URL apiUrl = new URL(url);
@@ -33,6 +33,7 @@ public class AdventurerApi {
                 in.close();
 
                 ObjectMapper mapper = new ObjectMapper();
+                System.out.println("Dps do mapper");
                 Adventurer[] adventurers = mapper.readValue(response.toString(), Adventurer[].class);
                 System.out.println(adventurers[0].getNick());
                 System.out.println("OK");

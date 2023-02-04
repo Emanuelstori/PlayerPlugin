@@ -10,8 +10,7 @@ public class Adventurer {
     private String displayNick;
     private String permission;
     private String email;
-    private Date createdAt;
-    private AdventurerAttributes adventurerAttributes;
+    private String created_at;
 
     public Integer getId() {
         return id;
@@ -69,19 +68,11 @@ public class Adventurer {
         this.email = email;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
+    public String getCreated_at() {
+        return created_at;
     }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public AdventurerAttributes getAdventurerAttributes() {
-        return adventurerAttributes;
-    }
-
-    public void setAdventurerAttributes(AdventurerAttributes adventurerAttributes) {
-        this.adventurerAttributes = adventurerAttributes;
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 }
