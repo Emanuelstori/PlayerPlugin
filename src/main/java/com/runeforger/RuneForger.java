@@ -1,5 +1,6 @@
 package com.runeforger;
 
+import com.runeforger.commands.NormalCommands;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -7,14 +8,7 @@ import com.runeforger.Player.PlayerManager;
 import com.runeforger.listeners.NormalListeners;
 
 public final class RuneForger extends JavaPlugin implements Listener {
-    private static RuneForger instance;
-
-    public RuneForger main;
     public PlayerManager playerManager;
-
-    public static RuneForger getInstance() {
-        return instance;
-    }
 
     @Override
     public void onEnable() {
@@ -22,6 +16,9 @@ public final class RuneForger extends JavaPlugin implements Listener {
         // Listeners
         getServer().getPluginManager().registerEvents(new NormalListeners(), this);
 
+        // Commands
+        this.getCommand("login").setExecutor(new NormalCommands());
+        this.getCommand("register").setExecutor(new NormalCommands());
         // Manager
         playerManager = new PlayerManager();
         

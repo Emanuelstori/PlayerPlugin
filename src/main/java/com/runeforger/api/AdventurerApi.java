@@ -14,7 +14,7 @@ import java.net.InetSocketAddress;
 import java.net.URL;
 
 public class AdventurerApi {
-    public static void getAdventurer(String uuid){
+    public static Adventurer getAdventurer(String uuid){
         String url = "http://localhost:3000/api/adventurer/uuid/" + uuid;
 
         try {
@@ -34,14 +34,16 @@ public class AdventurerApi {
 
                 ObjectMapper mapper = new ObjectMapper();
                 System.out.println("Dps do mapper");
-                Adventurer[] adventurers = mapper.readValue(response.toString(), Adventurer[].class);
-                System.out.println(adventurers[0].getNick());
-                System.out.println("OK");
+                Adventurer adventurer = mapper.readValue(response.toString(), Adventurer.class);
+                System.out.println(adventurer.getNick());
+                return adventurer;
             } else {
                 System.out.println("Erro api");
+                return null;
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());
+            return null;
         }
     }
 }

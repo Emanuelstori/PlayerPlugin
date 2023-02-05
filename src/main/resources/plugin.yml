@@ -2,3 +2,20 @@ name: RuneForger
 version: ''
 main: com.runeforger.RuneForger
 api-version: 1.19
+commands:
+  register:
+    description: registeruser
+    usage: /<command>
+    permission: rf.register
+  login:
+    description: loginuser
+    usage: /<command>
+    permission: rf.login
+  registermail:
+    description: registeremail
+    usage: /<command>
+    permission: rf.registermail
+  verifymail:
+    description: verifyemail
+    usage: /<comand>
+    permission: rf.verifymail

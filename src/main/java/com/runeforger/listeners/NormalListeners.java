@@ -16,7 +16,7 @@ public class NormalListeners implements Listener {
 
     player.sendMessage("Bem vindo");
 
-    AdventurerApi.getAdventurer(player.getUniqueId().toString());
+
 
   }
 }
