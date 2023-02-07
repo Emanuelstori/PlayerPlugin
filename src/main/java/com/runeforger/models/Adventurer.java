@@ -6,11 +6,11 @@ public class Adventurer {
     private Integer id;
     private String uuid;
     private String nick;
+    private String display_nick;
     private String password;
-    private String displayNick;
     private String permission;
     private String email;
-    private String created_at;
+    private String data_creation;
 
     public Integer getId() {
         return id;
@@ -36,20 +36,20 @@ public class Adventurer {
         this.nick = nick;
     }
 
+    public String getDisplay_nick() {
+        return display_nick;
+    }
+
+    public void setDisplay_nick(String display_nick) {
+        this.display_nick = display_nick;
+    }
+
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getDisplayNick() {
-        return displayNick;
-    }
-
-    public void setDisplayNick(String displayNick) {
-        this.displayNick = displayNick;
     }
 
     public String getPermission() {
@@ -68,11 +68,11 @@ public class Adventurer {
         this.email = email;
     }
 
-    public String getCreated_at() {
-        return created_at;
+    public String getData_creation() {
+        return data_creation;
     }
 
-    public void setCreated_at(String created_at) {
-        this.created_at = created_at;
+    public void setData_creation(String data_creation) {
+        this.data_creation = data_creation;
     }
 }

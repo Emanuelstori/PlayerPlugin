@@ -12,7 +12,8 @@ public class NormalListeners implements Listener {
   @EventHandler
   public void PlayerJoin(PlayerJoinEvent e) {
     Player player = e.getPlayer();
-    new Playerfile().createFolder(player.getUniqueId().toString());
+    System.out.println(player.getUniqueId());
+
 
     player.sendMessage("Bem vindo");
 
